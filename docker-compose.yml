@@ -7,7 +7,7 @@ services:
   facemask:
     container_name: facemask
     build: .
-    #on-failure: always
+    restart: always
     networks:
      - mask-net
     ports:
