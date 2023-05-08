@@ -1,0 +1,14 @@
+networks:
+  mask-net:
+    external: true
+
+
+services:
+  facemask:
+    container_name: facemask
+    build: .
+    #on-failure: always
+    networks:
+     - mask-net
+    ports:
+     - 8888:8888
