@@ -9,5 +9,3 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
 http.server.SimpleHTTPRequestHandler.extensions_map['.wasm'] = 'application/wasm'
 httpd = http.server.HTTPServer(('0.0.0.0', 8888), MyHttpRequestHandler)
 httpd.serve_forever()
-
-#print("hello-world")
