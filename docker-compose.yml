@@ -2,7 +2,6 @@ networks:
   mask-net:
     external: true
 
-
 services:
   facemask:
     container_name: facemask
@@ -12,3 +11,18 @@ services:
      - mask-net
     ports:
      - 8888:8888
+
+  openspeedtest:
+    container_name: openspeedtest
+    deploy:
+      replicas: 1
+    restart: always
+    image: openspeedtest/latest
+    networks:
+     - mask-net
+    ports:
+    - 8443:3000
+    - 8442:3001
+
+
+version: '3'
